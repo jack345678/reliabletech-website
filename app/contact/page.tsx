@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export default function ContactPage() {
   title: "Contact ReliableTech IT Solutions LLC",
   description:
     "Contact ReliableTech IT Solutions LLC for managed IT services, Microsoft 365, Azure, cybersecurity, networking, and technology consulting in Frederick, MD and surrounding areas.",
