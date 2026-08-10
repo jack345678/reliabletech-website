@@ -1,9 +1,20 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About ReliableTech IT Solutions LLC",
+  description:
+    "Learn about ReliableTech IT Solutions LLC and our mission to provide dependable IT support, cybersecurity, cloud, Microsoft 365, and endpoint management services.",
+  alternates: {
+    canonical: "https://reliabletechitsolution.com/about",
+  },
+};
+
 export default function AboutPage() {
   return (
-    <main className="bg-white">
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 py-24 text-white">
+    <main>
+      <section className="bg-gradient-to-r from-blue-950 to-blue-700 py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-4xl font-bold text-white md:text-5xl">
             About ReliableTech IT Solutions LLC
           </h1>
 
@@ -16,7 +27,6 @@ export default function AboutPage() {
 
       <section className="py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2">
-
           <div>
             <h2 className="text-3xl font-bold text-slate-900">
               Our Mission
@@ -42,16 +52,15 @@ export default function AboutPage() {
             </h2>
 
             <ul className="mt-8 space-y-4 text-slate-700">
-              <li>✅ 15+ Years of IT Experience</li>
-              <li>✅ Microsoft 365 Specialists</li>
-              <li>✅ Azure Cloud Solutions</li>
-              <li>✅ Microsoft Intune & Endpoint Management</li>
-              <li>✅ Cybersecurity Best Practices</li>
-              <li>✅ Fast Remote & On-site Support</li>
-              <li>✅ Small Business IT Experts</li>
+              <li>15+ Years of IT Experience</li>
+              <li>Microsoft 365 Specialists</li>
+              <li>Azure Cloud Solutions</li>
+              <li>Microsoft Intune &amp; Endpoint Management</li>
+              <li>Cybersecurity Best Practices</li>
+              <li>Fast Remote &amp; On-site Support</li>
+              <li>Small Business IT Experts</li>
             </ul>
           </div>
-
         </div>
       </section>
     </main>
