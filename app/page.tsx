@@ -1,64 +1,25 @@
-export default function AboutPage() {
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import ServicesGrid from "./components/ServicesGrid";
+import WhyChooseUs from "./components/WhyChooseUs";
+import Technologies from "./components/Technologies";
+import Industries from "./components/Industries";
+import Testimonials from "./components/Testimonials";
+import CTA from "./components/CTA";
+import Footer from "./components/Footer";
+
+export default function Home() {
   return (
-    <main className="bg-white">
-
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 py-24 text-white">
-        <div className="mx-auto max-w-7xl px-6">
-          <h1 className="text-5xl font-bold">
-            About ReliableTech IT Solutions LLC
-          </h1>
-
-          <p className="mt-6 max-w-3xl text-xl text-blue-100">
-            We help small businesses improve security, productivity,
-            and reliability through modern IT solutions.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2">
-
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900">
-              Our Mission
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              ReliableTech IT Solutions LLC provides enterprise-quality
-              IT services for small and medium-sized businesses.
-              Our mission is to help organizations stay secure,
-              productive, and connected through modern Microsoft
-              technologies and proactive IT support.
-            </p>
-
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              We believe technology should empower businesses—not
-              slow them down. Our team focuses on reliability,
-              security, and long-term partnerships.
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-slate-50 p-8 shadow">
-
-            <h2 className="text-3xl font-bold text-slate-900">
-              Why Choose Us?
-            </h2>
-
-            <ul className="mt-8 space-y-4 text-slate-700">
-              <li>✅ 15+ Years of IT Experience</li>
-              <li>✅ Microsoft 365 Specialists</li>
-              <li>✅ Azure Cloud Solutions</li>
-              <li>✅ Microsoft Intune & Endpoint Management</li>
-              <li>✅ Cybersecurity Best Practices</li>
-              <li>✅ Fast Remote & On-site Support</li>
-              <li>✅ Small Business IT Experts</li>
-            </ul>
-
-          </div>
-
-        </div>
-      </section>
-
-    </main>
+    <>
+      <Navbar />
+      <Hero />
+      <ServicesGrid />
+      <WhyChooseUs />
+      <Technologies />
+      <Industries />
+      <Testimonials />
+      <CTA />
+      <Footer />
+    </>
   );
 }
