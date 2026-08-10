@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export default function ContactPage() {
+export const metadata: Metadata = {
   title: "Contact ReliableTech IT Solutions LLC",
   description:
     "Contact ReliableTech IT Solutions LLC for managed IT services, Microsoft 365, Azure, cybersecurity, networking, and technology consulting in Frederick, MD and surrounding areas.",
@@ -11,7 +11,7 @@ export default function ContactPage() {
 
 export default function ContactPage() {
   return (
-    <main>
+    <main className="min-h-screen bg-slate-50">
       <section className="bg-gradient-to-r from-blue-950 to-blue-700 py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <h1 className="text-4xl font-bold md:text-5xl">
@@ -36,13 +36,16 @@ export default function ContactPage() {
               <p>
                 <strong>Phone:</strong> 301-908-9266
               </p>
+
               <p>
                 <strong>Email:</strong> info@reliabletechitsolution.com
               </p>
+
               <p>
                 <strong>Service Area:</strong> Frederick, MD &amp; Surrounding
                 Areas
               </p>
+
               <p>
                 <strong>Hours:</strong> Monday – Friday, 8:00 AM – 6:00 PM
               </p>
