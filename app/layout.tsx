@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "ReliableTech IT Solutions LLC",
   description:
     "Managed IT Services, Microsoft 365, Azure, Cybersecurity, Networking, and IT Consulting for small businesses.",
+  alternates: {
+    canonical: "https://reliabletechitsolution.com/",
+  },
 };
 
 export default function RootLayout({
@@ -16,11 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-slate-900">
+      <body>
         <Navbar />
-
         {children}
-
         <Footer />
       </body>
     </html>
