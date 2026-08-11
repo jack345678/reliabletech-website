@@ -1,20 +1,71 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact ReliableTech IT Solutions LLC",
-  description:
-    "Contact ReliableTech IT Solutions LLC for managed IT services, Microsoft 365, Azure, cybersecurity, networking, and technology consulting in Frederick, MD and surrounding areas.",
-  alternates: {
-    canonical: "https://reliabletechitsolution.com/contact",
-  },
-};
-
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+  const [sending, setSending] = useState(false);
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    setSending(true);
+    setStatus("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to send request.");
+      }
+
+      setStatus(
+        "Thank you! Your consultation request has been sent successfully."
+      );
+
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      setStatus(
+        "Sorry, we could not send your request. Please try again or call us."
+      );
+    } finally {
+      setSending(false);
+    }
+  }
+
   return (
-    <main className="min-h-screen bg-slate-50">
-      <section className="bg-gradient-to-r from-blue-950 to-blue-700 py-20 text-white">
+    <main className="bg-slate-50 min-h-screen">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-700 py-20 text-white">
         <div className="mx-auto max-w-7xl px-6">
-          <h1 className="text-4xl font-bold md:text-5xl">
+          <h1 className="text-5xl font-bold">
             Contact Us
           </h1>
 
@@ -33,22 +84,10 @@ export default function ContactPage() {
             </h2>
 
             <div className="mt-8 space-y-6 text-lg">
-              <p>
-                <strong>Phone:</strong> 301-908-9266
-              </p>
-
-              <p>
-                <strong>Email:</strong> info@reliabletechitsolution.com
-              </p>
-
-              <p>
-                <strong>Service Area:</strong> Frederick, MD &amp; Surrounding
-                Areas
-              </p>
-
-              <p>
-                <strong>Hours:</strong> Monday – Friday, 8:00 AM – 6:00 PM
-              </p>
+              <p><strong>📞 Phone:</strong> 301-908-9266</p>
+              <p><strong>📧 Email:</strong> info@reliabletechitsolution.com</p>
+              <p><strong>📍 Service Area:</strong> Frederick, MD & Surrounding Areas</p>
+              <p><strong>🕒 Hours:</strong> Monday – Friday, 8:00 AM – 6:00 PM</p>
             </div>
           </div>
 
@@ -57,33 +96,25 @@ export default function ContactPage() {
               Request a Free Consultation
             </h2>
 
-            <form className="mt-8 space-y-4">
+            <form onSubmit={handleSubmit} className="mt-8 space-y-4">
               <input
-                type="text"
-                name="name"
-                required
                 className="w-full rounded-lg border p-3"
                 placeholder="Your Name"
               />
 
               <input
-                type="text"
-                name="company"
                 className="w-full rounded-lg border p-3"
                 placeholder="Company Name"
               />
 
               <input
-                type="email"
                 name="email"
-                required
+                type="email"
                 className="w-full rounded-lg border p-3"
                 placeholder="Email Address"
               />
 
               <input
-                type="tel"
-                name="phone"
                 className="w-full rounded-lg border p-3"
                 placeholder="Phone Number"
               />
@@ -91,17 +122,21 @@ export default function ContactPage() {
               <textarea
                 name="message"
                 rows={5}
-                required
                 className="w-full rounded-lg border p-3"
                 placeholder="Tell us about your IT needs..."
               />
 
               <button
-                type="submit"
                 className="w-full rounded-lg bg-blue-700 py-3 font-semibold text-white hover:bg-blue-800"
               >
-                Send Request
+                {sending ? "Sending..." : "Send Request"}
               </button>
+
+              {status && (
+                <p className="rounded-lg bg-slate-100 p-4 text-center text-sm text-slate-700">
+                  {status}
+                </p>
+              )}
             </form>
           </div>
         </div>
