@@ -14,7 +14,7 @@ const services = [
   {
     title: "Managed IT Services",
     description:
-      "24/7 monitoring, maintenance, help desk, and proactive support designed to keep your business technology reliable and productive.",
+      "Proactive monitoring, maintenance, help desk, and proactive support designed to keep your business technology reliable and productive.",
   },
   {
     title: "Microsoft 365",

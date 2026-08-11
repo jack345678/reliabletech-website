@@ -56,13 +56,13 @@ export default function Hero() {
             </div>
 
             <div>
-              <h3 className="text-4xl font-bold">24/7</h3>
+              <h3 className="text-4xl font-bold">Fast</h3>
               <p className="text-blue-200">IT Support</p>
             </div>
 
             <div>
-              <h3 className="text-4xl font-bold">99.9%</h3>
-              <p className="text-blue-200">System Availability</p>
+              <h3 className="text-4xl font-bold">Reliable</h3>
+              <p className="text-blue-200">Technology</p>
             </div>
 
             <div>

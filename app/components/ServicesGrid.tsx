@@ -3,7 +3,7 @@ export default function ServicesGrid() {
     {
       title: "Managed IT Services",
       description:
-        "Proactive monitoring, maintenance, help desk, and 24/7 support.",
+        "Proactive monitoring, maintenance, help desk, and responsive support.",
     },
     {
       title: "Microsoft 365",

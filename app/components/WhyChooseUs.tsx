@@ -16,7 +16,7 @@ export default function WhyChooseUs() {
         "Protecting businesses with modern security practices, MFA, endpoint protection, and compliance.",
     },
     {
-      title: "24/7 Reliable Support",
+      title: "Responsive IT Support",
       description:
         "Fast remote support, proactive monitoring, and quick issue resolution whenever you need us.",
     },
