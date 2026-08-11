@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
