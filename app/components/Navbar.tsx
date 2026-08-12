@@ -27,9 +27,9 @@ export default function Navbar() {
           />
 
           <div>
-            <h1 className="text-lg font-bold text-slate-900">
+            <div className="text-lg font-bold text-slate-900">
               ReliableTech
-            </h1>
+            </div>
 
             <p className="text-sm text-slate-500">
               IT Solutions LLC
