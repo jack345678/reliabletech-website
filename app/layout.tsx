@@ -4,11 +4,14 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "ReliableTech IT Solutions LLC",
+  title: "ReliableTech IT Solutions | Managed IT Services & Cybersecurity",
   description:
-    "Managed IT Services, Microsoft 365, Azure, Cybersecurity, Networking, and IT Consulting for small businesses.",
+    "ReliableTech IT Solutions provides secure managed IT services, Microsoft 365, Azure, cybersecurity, networking, cloud services, and IT support for small businesses.",
   alternates: {
     canonical: "https://reliabletechitsolution.com/",
+  },
+  other: {
+    "content-language": "en-US",
   },
 };
 
